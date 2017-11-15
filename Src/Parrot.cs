@@ -9,6 +9,8 @@ namespace parrot_refactoring_kata_2017_11
 		readonly double _voltage;
 		readonly bool _isNailed;
 
+		protected ParrotTypeEnum Type => _type;
+
 		public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
 			_type = type;
