@@ -1,8 +1,6 @@
-﻿
-using NUnit.Framework;
-using parrot_refactoring_kata_2017_11;
+﻿using NUnit.Framework;
 
-namespace parrot
+namespace parrot_refactoring_kata_2017_11.Tests
 {
 	[TestFixture]
 	public class ParrotTest
