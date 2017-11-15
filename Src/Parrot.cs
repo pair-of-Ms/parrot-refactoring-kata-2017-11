@@ -4,6 +4,11 @@ namespace parrot_refactoring_kata_2017_11
 {
 	public class Parrot
 	{
+		public static Parrot Create(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+		{
+			return new Parrot(type, numberOfCoconuts, voltage, isNailed);
+		}
+
 		readonly ParrotTypeEnum _type;
 		readonly int _numberOfCoconuts;
 		readonly double _voltage;
@@ -11,7 +16,7 @@ namespace parrot_refactoring_kata_2017_11
 
 		protected ParrotTypeEnum Type => _type;
 
-		public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+		private Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
 			_type = type;
 			_numberOfCoconuts = numberOfCoconuts;
