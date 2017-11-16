@@ -23,6 +23,10 @@ namespace parrot_refactoring_kata_2017_11
 			_voltage = voltage;
 			_isNailed = isNailed; 
 		}
+		
+		protected Parrot()
+		{
+		}
 
 		public double GetSpeed()
 		{
