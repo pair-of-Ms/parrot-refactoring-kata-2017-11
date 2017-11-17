@@ -5,6 +5,8 @@ namespace parrot_refactoring_kata_2017_11
 	public class AfricanParrot : Parrot
 	{
 		private int NumberOfCoconuts { get; }
+
+		private double LoadFactor => 9.0;
 		
 		public AfricanParrot(int numberOfCoconuts)
 		{
@@ -13,12 +15,7 @@ namespace parrot_refactoring_kata_2017_11
 
 		public override double GetSpeed()
 		{
-			return Math.Max(0, base.BaseSpeed - GetLoadFactor() * NumberOfCoconuts);
-		}
-		
-		private double GetLoadFactor()
-		{
-			return 9.0;
+			return Math.Max(0, base.BaseSpeed - LoadFactor * NumberOfCoconuts);
 		}
 	}
 }
