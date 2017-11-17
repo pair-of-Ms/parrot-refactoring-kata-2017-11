@@ -18,5 +18,9 @@ namespace parrot_refactoring_kata_2017_11
 			return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * NumberOfCoconuts);
 		}
 		
+		private double GetLoadFactor()
+		{
+			return 9.0;
+		}
 	}
 }
