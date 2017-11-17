@@ -6,14 +6,19 @@ namespace parrot_refactoring_kata_2017_11
 	{
 		public static Parrot Create(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
+			if (type == ParrotTypeEnum.EUROPEAN)
+			{
+				return new EuropeanParrot();
+			}
 			return new Parrot(type, numberOfCoconuts, voltage, isNailed);
 		}
 
+		public virtual ParrotTypeEnum Type { get; }
+		
 		readonly int _numberOfCoconuts;
 		readonly double _voltage;
 		readonly bool _isNailed;
 
-		public virtual ParrotTypeEnum Type { get; }
 
 		private Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
