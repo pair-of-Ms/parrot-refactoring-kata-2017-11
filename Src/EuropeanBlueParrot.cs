@@ -1,4 +1,6 @@
-﻿namespace parrot_refactoring_kata_2017_11
+﻿using System;
+
+namespace parrot_refactoring_kata_2017_11
 {
 	public class EuropeanBlueParrot : Parrot
 	{
@@ -17,6 +19,11 @@
 		public override double GetSpeed()
 		{
 			return (IsNailed) ? 0 : GetBaseSpeed(Voltage);
+		}
+		
+		private double GetBaseSpeed(double voltage)
+		{
+			return Math.Min(24.0, voltage * GetBaseSpeed());
 		}
 	}
 }
