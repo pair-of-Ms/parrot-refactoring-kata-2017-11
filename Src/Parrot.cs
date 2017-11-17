@@ -9,16 +9,15 @@ namespace parrot_refactoring_kata_2017_11
 			return new Parrot(type, numberOfCoconuts, voltage, isNailed);
 		}
 
-		readonly ParrotTypeEnum _type;
 		readonly int _numberOfCoconuts;
 		readonly double _voltage;
 		readonly bool _isNailed;
 
-		protected ParrotTypeEnum Type => _type;
+		protected ParrotTypeEnum Type { get; }
 
 		private Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
-			_type = type;
+			Type = type;
 			_numberOfCoconuts = numberOfCoconuts;
 			_voltage = voltage;
 			_isNailed = isNailed; 
@@ -30,7 +29,7 @@ namespace parrot_refactoring_kata_2017_11
 
 		public double GetSpeed()
 		{
-			switch (_type)
+			switch (Type)
 			{
 				case ParrotTypeEnum.EUROPEAN:
 					return GetBaseSpeed();
