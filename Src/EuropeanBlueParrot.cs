@@ -13,5 +13,10 @@
 			Voltage = voltage;
 			IsNailed = isNailed;
 		}
+
+		public override double GetSpeed()
+		{
+			return (IsNailed) ? 0 : GetBaseSpeed(Voltage);
+		}
 	}
 }

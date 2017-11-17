@@ -36,12 +36,12 @@ namespace parrot_refactoring_kata_2017_11
 				case ParrotTypeEnum.AFRICAN:
 					return GetSpeed();
 				case ParrotTypeEnum.NORWEGIAN_BLUE:
-					return (IsNailed) ? 0 : GetBaseSpeed(Voltage);
+					return GetSpeed();
 			}
 			throw new Exception("Should be unreachable");
 		}
 
-		private double GetBaseSpeed(double voltage)
+		protected double GetBaseSpeed(double voltage)
 		{
 			return Math.Min(24.0, voltage * GetBaseSpeed());
 		}
