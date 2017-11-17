@@ -13,7 +13,7 @@ namespace parrot_refactoring_kata_2017_11
 		readonly double _voltage;
 		readonly bool _isNailed;
 
-		protected ParrotTypeEnum Type { get; }
+		public virtual ParrotTypeEnum Type { get; }
 
 		private Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
