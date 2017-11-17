@@ -2,7 +2,7 @@
 
 namespace parrot_refactoring_kata_2017_11
 {
-	public class Parrot
+	public abstract class Parrot
 	{
 		public virtual ParrotTypeEnum Type { get; }
 
@@ -27,20 +27,8 @@ namespace parrot_refactoring_kata_2017_11
 			}
 		}
 
-		public virtual double GetSpeed()
-		{
-			switch (Type)
-			{
-				case ParrotTypeEnum.EUROPEAN:
-					return GetSpeed();
-				case ParrotTypeEnum.AFRICAN:
-					return GetSpeed();
-				case ParrotTypeEnum.NORWEGIAN_BLUE:
-					return GetSpeed();
-			}
-			throw new Exception("Should be unreachable");
-		}
-
+		public abstract double GetSpeed();
+		
 		protected double GetBaseSpeed()
 		{
 			return 12.0;
