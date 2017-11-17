@@ -14,23 +14,28 @@ namespace parrot_refactoring_kata_2017_11
 			{
 				return new AfricanParrot(numberOfCoconuts);
 			}
+			if (type == ParrotTypeEnum.NORWEGIAN_BLUE)
+			{
+				return new EuropeanBlueParrot(voltage, isNailed);
+			}
 			return new Parrot(type, numberOfCoconuts, voltage, isNailed);
 		}
 
 		public virtual ParrotTypeEnum Type { get; }
 
 		public virtual int NumberOfCoconuts { get; }
+
+		public virtual double Voltage { get; }
 		
-		readonly double _voltage;
-		readonly bool _isNailed;
+		public virtual bool IsNailed { get; }
 
 
 		private Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
 			Type = type;
 			NumberOfCoconuts = numberOfCoconuts;
-			_voltage = voltage;
-			_isNailed = isNailed; 
+			Voltage = voltage;
+			IsNailed = isNailed; 
 		}
 		
 		protected Parrot()
@@ -46,7 +51,7 @@ namespace parrot_refactoring_kata_2017_11
 				case ParrotTypeEnum.AFRICAN:
 					return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * NumberOfCoconuts);
 				case ParrotTypeEnum.NORWEGIAN_BLUE:
-					return (_isNailed) ? 0 : GetBaseSpeed(_voltage);
+					return (IsNailed) ? 0 : GetBaseSpeed(Voltage);
 			}
 
 			throw new Exception("Should be unreachable");
