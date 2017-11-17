@@ -4,6 +4,14 @@ namespace parrot_refactoring_kata_2017_11
 {
 	public class Parrot
 	{
+		public virtual ParrotTypeEnum Type { get; }
+
+		public virtual int NumberOfCoconuts { get; }
+
+		public virtual double Voltage { get; }
+
+		public virtual bool IsNailed { get; }
+
 		public static Parrot Create(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
 			switch (type)
@@ -17,27 +25,6 @@ namespace parrot_refactoring_kata_2017_11
 				default:
 					throw new ArgumentException("Given Parrot Type is not valid");
 			}
-		}
-
-		public virtual ParrotTypeEnum Type { get; }
-
-		public virtual int NumberOfCoconuts { get; }
-
-		public virtual double Voltage { get; }
-		
-		public virtual bool IsNailed { get; }
-
-
-		private Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
-		{
-			Type = type;
-			NumberOfCoconuts = numberOfCoconuts;
-			Voltage = voltage;
-			IsNailed = isNailed; 
-		}
-		
-		protected Parrot()
-		{
 		}
 
 		public double GetSpeed()
