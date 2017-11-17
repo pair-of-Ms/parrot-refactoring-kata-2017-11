@@ -42,6 +42,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Src\AfricanParrot.cs" />
     <Compile Include="Src\EuropeanParrot.cs" />
     <Compile Include="Src\Parrot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

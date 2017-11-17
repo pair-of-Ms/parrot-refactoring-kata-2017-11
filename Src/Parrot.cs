@@ -10,12 +10,17 @@ namespace parrot_refactoring_kata_2017_11
 			{
 				return new EuropeanParrot();
 			}
+			if (type == ParrotTypeEnum.AFRICAN)
+			{
+				return new AfricanParrot(numberOfCoconuts);
+			}
 			return new Parrot(type, numberOfCoconuts, voltage, isNailed);
 		}
 
 		public virtual ParrotTypeEnum Type { get; }
+
+		public virtual int NumberOfCoconuts { get; }
 		
-		readonly int _numberOfCoconuts;
 		readonly double _voltage;
 		readonly bool _isNailed;
 
@@ -23,7 +28,7 @@ namespace parrot_refactoring_kata_2017_11
 		private Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
 			Type = type;
-			_numberOfCoconuts = numberOfCoconuts;
+			NumberOfCoconuts = numberOfCoconuts;
 			_voltage = voltage;
 			_isNailed = isNailed; 
 		}
@@ -39,7 +44,7 @@ namespace parrot_refactoring_kata_2017_11
 				case ParrotTypeEnum.EUROPEAN:
 					return GetBaseSpeed();
 				case ParrotTypeEnum.AFRICAN:
-					return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * _numberOfCoconuts);
+					return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * NumberOfCoconuts);
 				case ParrotTypeEnum.NORWEGIAN_BLUE:
 					return (_isNailed) ? 0 : GetBaseSpeed(_voltage);
 			}
