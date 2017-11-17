@@ -27,12 +27,12 @@ namespace parrot_refactoring_kata_2017_11
 			}
 		}
 
-		public double GetSpeed()
+		public virtual double GetSpeed()
 		{
 			switch (Type)
 			{
 				case ParrotTypeEnum.EUROPEAN:
-					return GetBaseSpeed();
+					return GetSpeed();
 				case ParrotTypeEnum.AFRICAN:
 					return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * NumberOfCoconuts);
 				case ParrotTypeEnum.NORWEGIAN_BLUE:
@@ -51,7 +51,7 @@ namespace parrot_refactoring_kata_2017_11
 			return 9.0;
 		}
 
-		private double GetBaseSpeed()
+		protected double GetBaseSpeed()
 		{
 			return 12.0;
 		}

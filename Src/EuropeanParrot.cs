@@ -3,5 +3,10 @@
 	public class EuropeanParrot : Parrot
 	{
 		public override ParrotTypeEnum Type => ParrotTypeEnum.EUROPEAN;
+
+		public override double GetSpeed()
+		{
+			return base.GetBaseSpeed();
+		}
 	}
 }
