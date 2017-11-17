@@ -34,7 +34,7 @@ namespace parrot_refactoring_kata_2017_11
 				case ParrotTypeEnum.EUROPEAN:
 					return GetSpeed();
 				case ParrotTypeEnum.AFRICAN:
-					return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * NumberOfCoconuts);
+					return GetSpeed();
 				case ParrotTypeEnum.NORWEGIAN_BLUE:
 					return (IsNailed) ? 0 : GetBaseSpeed(Voltage);
 			}
@@ -46,7 +46,7 @@ namespace parrot_refactoring_kata_2017_11
 			return Math.Min(24.0, voltage * GetBaseSpeed());
 		}
 
-		private double GetLoadFactor()
+		protected double GetLoadFactor()
 		{
 			return 9.0;
 		}
