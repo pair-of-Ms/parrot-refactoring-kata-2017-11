@@ -4,14 +4,6 @@ namespace parrot_refactoring_kata_2017_11
 {
 	public abstract class Parrot
 	{
-		public virtual ParrotTypeEnum Type { get; }
-
-		public virtual int NumberOfCoconuts { get; }
-
-		public virtual double Voltage { get; }
-
-		public virtual bool IsNailed { get; }
-
 		public static Parrot Create(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
 			switch (type)

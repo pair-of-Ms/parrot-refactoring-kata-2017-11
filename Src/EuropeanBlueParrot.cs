@@ -4,11 +4,9 @@ namespace parrot_refactoring_kata_2017_11
 {
 	public class EuropeanBlueParrot : Parrot
 	{
-		public override ParrotTypeEnum Type => ParrotTypeEnum.NORWEGIAN_BLUE;
+		public double Voltage { get; }
 
-		public override double Voltage { get; }
-
-		public override bool IsNailed { get; }
+		public bool IsNailed { get; }
 
 		public EuropeanBlueParrot(double voltage, bool isNailed)
 		{
