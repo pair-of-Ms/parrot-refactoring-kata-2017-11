@@ -6,19 +6,17 @@ namespace parrot_refactoring_kata_2017_11
 	{
 		public static Parrot Create(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
-			if (type == ParrotTypeEnum.EUROPEAN)
+			switch (type)
 			{
-				return new EuropeanParrot();
+				case ParrotTypeEnum.EUROPEAN:
+					return new EuropeanParrot();
+				case ParrotTypeEnum.AFRICAN:
+					return new AfricanParrot(numberOfCoconuts);
+				case ParrotTypeEnum.NORWEGIAN_BLUE:
+					return new EuropeanBlueParrot(voltage, isNailed);
+				default:
+					throw new ArgumentException("Given Parrot Type is not valid");
 			}
-			if (type == ParrotTypeEnum.AFRICAN)
-			{
-				return new AfricanParrot(numberOfCoconuts);
-			}
-			if (type == ParrotTypeEnum.NORWEGIAN_BLUE)
-			{
-				return new EuropeanBlueParrot(voltage, isNailed);
-			}
-			return new Parrot(type, numberOfCoconuts, voltage, isNailed);
 		}
 
 		public virtual ParrotTypeEnum Type { get; }
@@ -53,7 +51,6 @@ namespace parrot_refactoring_kata_2017_11
 				case ParrotTypeEnum.NORWEGIAN_BLUE:
 					return (IsNailed) ? 0 : GetBaseSpeed(Voltage);
 			}
-
 			throw new Exception("Should be unreachable");
 		}
 
