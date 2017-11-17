@@ -4,9 +4,9 @@ namespace parrot_refactoring_kata_2017_11
 {
 	public class EuropeanBlueParrot : Parrot
 	{
-		public double Voltage { get; }
+		private double Voltage { get; }
 
-		public bool IsNailed { get; }
+		private bool IsNailed { get; }
 
 		public EuropeanBlueParrot(double voltage, bool isNailed)
 		{
