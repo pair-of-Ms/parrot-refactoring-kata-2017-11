@@ -4,6 +4,8 @@ namespace parrot_refactoring_kata_2017_11
 {
 	public abstract class Parrot
 	{
+		protected double BaseSpeed => 12.0;
+
 		public static Parrot Create(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
 		{
 			switch (type)
@@ -20,10 +22,5 @@ namespace parrot_refactoring_kata_2017_11
 		}
 
 		public abstract double GetSpeed();
-		
-		protected double GetBaseSpeed()
-		{
-			return 12.0;
-		}
 	}
 }

@@ -4,7 +4,7 @@
 	{
 		public override double GetSpeed()
 		{
-			return base.GetBaseSpeed();
+			return base.BaseSpeed;
 		}
 	}
 }

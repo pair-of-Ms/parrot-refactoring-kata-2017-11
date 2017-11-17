@@ -13,7 +13,7 @@ namespace parrot_refactoring_kata_2017_11
 
 		public override double GetSpeed()
 		{
-			return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * NumberOfCoconuts);
+			return Math.Max(0, base.BaseSpeed - GetLoadFactor() * NumberOfCoconuts);
 		}
 		
 		private double GetLoadFactor()

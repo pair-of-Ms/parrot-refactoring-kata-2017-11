@@ -21,7 +21,7 @@ namespace parrot_refactoring_kata_2017_11
 		
 		private double GetBaseSpeed(double voltage)
 		{
-			return Math.Min(24.0, voltage * GetBaseSpeed());
+			return Math.Min(24.0, voltage * base.BaseSpeed);
 		}
 	}
 }
